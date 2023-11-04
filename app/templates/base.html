@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Side Menu Example</title>
+    <!-- Add the link to the Tailwind CSS CDN or include it from your project -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <!-- Add your custom CSS file -->
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body class="bg-gray-100">
+    <nav class="bg-blue-500 p-4">
+      <div class="container mx-auto">
+        <h1 class="text-2xl text-white">Network Monitoring Dashboard</h1>
+      </div>
+    </nav>
+    <div class="grid grid-cols-10">
+      <!-- Sidebar -->
+      <div class="col-span-2 bg-gray-800 text-white w-64 min-h-screen">
+        <div class="p-4">
+          <h1 class="text-2xl font-semibold">Menu</h1>
+        </div>
+        <ul class="py-4">
+          <li class="pl-4 py-2 hover:bg-gray-700"><a href="#">Dashboard</a></li>
+          <li class="pl-4 py-2 hover:bg-gray-700">
+            <a href="#">Network Status</a>
+          </li>
+          <li class="pl-4 py-2 hover:bg-gray-700"><a href="#">Alerts</a></li>
+          <!-- Add more menu items as needed -->
+        </ul>
+      </div>
+
+      <!-- Content Area -->
+      <div class="col-span-8 p-4">{% block content %} {% endblock %}</div>
+    </div>
+
+    <footer
+      class="fixed bottom-0 left-0 right-0 p-4 text-center text-white bg-blue-900"
+    >
+      &copy; 2023 Network Monitoring Tool
+    </footer>
+  </body>
+</html>

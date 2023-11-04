@@ -1,0 +1,56 @@
+{% extends './base.html' %}
+
+<!-- Dashboard content -->
+{% block content %}
+<div class="container mx-auto mt-4">
+  <div class="grid grid-rows-10 gap-2">
+    <h2 class="row-span-1">Network Performance</h2>
+    <div class="row-span-3 grid grid-cols-3 gap-4">
+      <div class="bg-white p-4 rounded shadow">
+        <h2 class="text-lg font-semibold mb-2">Network Speed</h2>
+        <p>Download Speed: {{download_speed}}</p>
+        <p>Upload Speed: {{upload_speed}}</p>
+      </div>
+      <div class="bg-white p-4 rounded shadow">
+        <h2 class="text-lg font-semibold mb-2">Packet Logs</h2>
+        <p>{{packet_log}}</p>
+      </div>
+      <div class="bg-white p-4 rounded shadow">
+        <h2 class="text-lg font-semibold mb-2">Network Latency</h2>
+        <p>{{rtt}}</p>
+      </div>
+    </div>
+
+    <h2 class="row-span-1">Device Status</h2>
+    <div class="row-span-3 grid grid-cols-3 gap-4">
+      <div class="bg-white p-4 rounded shadow">
+        <h2 class="text-lg font-semibold mb-2">Disk Usage</h2>
+        <iframe
+          src="static/disk_pie_chart.html"
+          width="350"
+          height="350"
+          frameborder="0"
+        ></iframe>
+      </div>
+      <div class="bg-white p-4 rounded shadow">
+        <h2 class="text-lg font-semibold mb-2">CPU Usage</h2>
+        <iframe
+          src="static/cpu_pie_chart.html"
+          width="350"
+          height="350"
+          frameborder="0"
+        ></iframe>
+      </div>
+    </div>
+
+    <!-- Card 2: Network Performance -->
+
+    <!-- Card 3: Alerts -->
+    <div class="bg-white p-4 rounded shadow">
+      <h2 class="text-lg font-semibold mb-2">Alerts</h2>
+      <!-- Add content for alerts here -->
+    </div>
+  </div>
+</div>
+
+{% endblock %}
